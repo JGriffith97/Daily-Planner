@@ -4,9 +4,27 @@
 // Clock at the top of the page alongside the date might be a nice touch.
 
 var save = document.getElementById("saveBtn");
-var text = document.querySelectorAll("textarea")
+var text = document.querySelectorAll("textarea");
 
-$(save).on("click", function() {
+var currentDateTime = null,
+date = null;
+
+function update() {
+  date = moment(new Date())
+  currentDateTime.html(date.format("dddd, MMMM Do YYYY, h:mm:ss a"))
+}
+
+function saveEvent(event) {
+  
+}
+
+
+$(document).ready(function() {
+  currentDateTime = $("#currentDay")
+  update();
+  setInterval(update, 1000);
+});
+
+$(save).on("click", function(event) {
   saveEvent();
 })
-
