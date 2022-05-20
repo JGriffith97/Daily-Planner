@@ -4,7 +4,15 @@
 // Clock at the top of the page alongside the date might be a nice touch.
 
 var save = document.getElementById("saveBtn");
-var text = document.querySelectorAll("textarea");
+var textArea = document.querySelectorAll("textarea");
+// Could theoretically make a query selector for all the textareas individually.
+// Maybe there's a better way? Should ask. But I could also probably .eq my way
+// through the individual textareas.
+
+// const timeKey = [
+
+// ]
+
 
 var currentDateTime = null,
 date = null;
@@ -21,12 +29,30 @@ function update() {
 // jQuery .eq method with if, else if statements to determine current time?
 
 
+
+// $("tr").eq(i).children("td").first  --  i = number
+// $("tr").eq(i) .search? .find?
+
 // TODO: Figure out how to save an individual line, the one associated with the
 // save button, to save that line ONLY to local storage so that it persists when
 // the page is refreshed.
 function saveEvent(event) {
-  
+  console.log()
 }
+
+// $(".entry").eq(0).css("background-color", "darkred")   // Makes the first TD (9AM) red.
+// $(".th").eq(0).css("background-color", "darkred")  // Proof of concept
+
+// $(".entry").eq(1).css("background-color", "darkgreen")
+// $(".th").eq(1).css("background-color", "darkgreen")
+
+// $(".entry").eq(2).css("background-color", "black")
+// $(".th").eq(2).css("background-color", "black")
+
+$(".contentRow").eq(0).css("background-color", "darkred") // selects the entire row, probably a more efficient option, just need to have
+                                                          // log applied
+$(".contentRow").eq(1).css("background-color", "darkgreen")
+$(".contentRow").eq(2).css("background-color", "black")
 
 
 $(document).ready(function() {
@@ -36,5 +62,5 @@ $(document).ready(function() {
 });
 
 $(save).on("click", function(event) {
-  saveEvent();
+  saveEvent(event);
 })
