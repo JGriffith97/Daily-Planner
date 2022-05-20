@@ -28,6 +28,10 @@ function update() {
 // if time has passed, current time, upcoming time.
 // jQuery .eq method with if, else if statements to determine current time?
 
+function timeChange() {
+
+}
+
 
 
 // $("tr").eq(i).children("td").first  --  i = number
@@ -49,11 +53,6 @@ function saveEvent(event) {
 // $(".entry").eq(2).css("background-color", "black")
 // $(".th").eq(2).css("background-color", "black")
 
-$(".contentRow").eq(0).css("background-color", "darkred") // selects the entire row, probably a more efficient option, just need to have
-                                                          // log applied
-$(".contentRow").eq(1).css("background-color", "darkgreen")
-$(".contentRow").eq(2).css("background-color", "black")
-
 
 $(document).ready(function() {
   currentDateTime = $("#currentDay")
@@ -64,3 +63,15 @@ $(document).ready(function() {
 $(save).on("click", function(event) {
   saveEvent(event);
 })
+
+// PROOF OF CONCEPT/EXPERIMENTATION AREA
+
+function makeColor() {
+  $(".contentRow").eq(0).css("background-color", "darkred") // selects the entire row, probably a more efficient option, just need to have
+                                                            // log applied
+  $(".contentRow").eq(1).css("background-color", "darkgreen")
+  $(".contentRow").eq(2).css("background-color", "black")
+  }
+  
+  console.log(moment())
+  makeColor()
