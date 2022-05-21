@@ -13,9 +13,11 @@ var textArea = document.querySelectorAll("textarea");
 
 // ]
 
-var nNow = moment("5:00", "h:mm a")
+// var now = moment("7:15", "h:mm a")
+// Placeholder so that I can spoof the time for testing purposes
 
-var now = moment()   // Tells the current time.
+var now = moment()
+// Tells the current time.
 
 var currentDateTime = null,
 date = null;
@@ -27,10 +29,10 @@ function update() {
   currentDateTime.html(date.format("dddd, MMMM Do YYYY, h:mm:ss a"))
 }
 
-// TODO: Funtion for changing the color of the timeblock based on the time
-// if time has passed, current time, upcoming time.
-// jQuery .eq method with if, else if statements to determine current time?
-
+// Changes the styles throughout the day with the passage of time.
+// DarkGreen = Current Hour
+// DarkRed = Next Upcoming Hour
+// Black = Passed Hour
 function timeChange() {
   var nine = moment("9:00 am", "h:mm a")
   var ten = moment("10:00 am", "h:mm a")
@@ -122,18 +124,11 @@ function saveEvent(event) {
   console.log()
 }
 
-// $(".entry").eq(0).css("background-color", "darkred")   // Makes the first TD (9AM) red.
-// $(".th").eq(0).css("background-color", "darkred")  // Proof of concept
-
-// $(".entry").eq(1).css("background-color", "darkgreen")
-// $(".th").eq(1).css("background-color", "darkgreen")
-
-// $(".entry").eq(2).css("background-color", "black")
-// $(".th").eq(2).css("background-color", "black")
-$(document).ready(function() {
+setTimeout(function() {
   timeChange();
-  setInterval(update, 1000)
-})
+  setInterval(timeChange, 60000)
+}, 60 - (new Date().getSeconds()))
+// Might work?
 
 $(document).ready(function() {
   currentDateTime = $("#currentDay")
@@ -153,10 +148,19 @@ $(save).on("click", function(event) {
 //   $(".contentRow").eq(1).css("background-color", "darkgreen")
 //   $(".contentRow").eq(2).css("background-color", "black")
 //   }
-  
+//   $(".entry").eq(0).css("background-color", "darkred")   // Makes the first TD (9AM) red.
+//   $(".th").eq(0).css("background-color", "darkred")  // Proof of concept
+
+//   $(".entry").eq(1).css("background-color", "darkgreen")
+//   $(".th").eq(1).css("background-color", "darkgreen")
+
+//   $(".entry").eq(2).css("background-color", "black")
+//   $(".th").eq(2).css("background-color", "black")
+
   console.log(moment())
   console.log(now)
   // makeColor()
 
   // References -- Just handy to have in one place
   // https://momentjs.com/docs/#/parsing/now/
+  //
