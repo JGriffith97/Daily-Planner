@@ -13,6 +13,9 @@ var textArea = document.querySelectorAll("textarea");
 
 // ]
 
+var nNow = moment("5:00", "h:mm a")
+
+var now = moment()   // Tells the current time.
 
 var currentDateTime = null,
 date = null;
@@ -29,7 +32,82 @@ function update() {
 // jQuery .eq method with if, else if statements to determine current time?
 
 function timeChange() {
+  var nine = moment("9:00 am", "h:mm a")
+  var ten = moment("10:00 am", "h:mm a")
+  var eleven = moment("11:00 am", "h:mm a")
+  var twelve = moment("12:00 pm", "h:mm a")
+  var one = moment("1:00 pm", "h:mm a")
+  var two = moment("2:00 pm", "h:mm a")
+  var three = moment("3:00 pm", "h:mm a")
+  var four = moment("4:00 pm", "h:mm a")
+  var five = moment("5:00 pm", "h:mm a")
+  var six = moment("6:00 pm", "h:mm a")
+  var seven = moment("7:00 pm", "h:mm a")
+  var endOfDay = moment("9:00 pm", "h:mm a")
 
+  if (now.isBetween(endOfDay, nine)) {
+    $(".contentRow").eq(0).css("background-color", "darkred")
+  } else if (now.isBetween(nine, ten)) {
+    $(".contentRow").eq(0).css("background-color", "darkgreen")
+    $(".contentRow").eq(1).css("background-color", "darkred")
+  } else if (now.isBetween(ten, eleven)) {
+    $(".contentRow").eq(1).css("background-color", "darkgreen")
+    $(".contentRow").eq(2).css("background-color", "darkred")
+    for (let i = 0; i < 1; i++) {
+      $(".contentRow").eq(i).css("background-color", "black")
+    }
+  } else if (now.isBetween(eleven, twelve)) {
+    $(".contentRow").eq(2).css("background-color", "darkgreen")
+    $(".contentRow").eq(3).css("background-color", "darkred")
+    for (let i = 0; i < 2; i++) {
+      $(".contentRow").eq(i).css("background-color", "black")
+    }
+  } else if (now.isBetween(twelve, one)) {
+    $(".contentRow").eq(3).css("background-color", "darkgreen")
+    $(".contentRow").eq(4).css("background-color", "darkred")
+    for (let i = 0; i < 3; i++) {
+      $(".contentRow").eq(i).css("background-color", "black")
+    }
+  } else if (now.isBetween(one, two)) {
+    $(".contentRow").eq(4).css("background-color", "darkgreen")
+    $(".contentRow").eq(5).css("background-color", "darkred")
+    for (let i = 0; i < 4; i++) {
+      $(".contentRow").eq(i).css("background-color", "black")
+    }
+  } else if (now.isBetween(two, three)) {
+    $(".contentRow").eq(5).css("background-color", "darkgreen")
+    $(".contentRow").eq(6).css("background-color", "darkred")
+    for (let i = 0; i < 5; i++) {
+      $(".contentRow").eq(i).css("background-color", "black")
+    }
+  } else if (now.isBetween(three, four)) {
+    $(".contentRow").eq(6).css("background-color", "darkgreen")
+    $(".contentRow").eq(7).css("background-color", "darkred")
+    for (let i = 0; i < 6; i++) {
+      $(".contentRow").eq(i).css("background-color", "black")
+    }
+  } else if (now.isBetween(four, five)) {
+    $(".contentRow").eq(7).css("background-color", "darkgreen")
+    $(".contentRow").eq(8).css("background-color", "darkred")
+    for (let i = 0; i < 7; i++) {
+      $(".contentRow").eq(i).css("background-color", "black")
+    }
+  } else if (now.isBetween(five, six)) {
+    $(".contentRow").eq(8).css("background-color", "darkgreen")
+    $(".contentRow").eq(9).css("background-color", "darkred")
+    for (let i = 0; i < 8; i++) {
+      $(".contentRow").eq(i).css("background-color", "black")
+    }
+  } else if (now.isBetween(six, seven)) {
+    $(".contentRow").eq(9).css("background-color", "darkgreen")
+    for (let i = 0; i < 9; i++) {
+      $(".contentRow").eq(i).css("background-color", "black")
+    }
+  } else if (now.isBetween(seven, endOfDay)) {
+    for (let i = 0; i <= 9; i++) {
+      $(".contentRow").eq(i).css("background-color", "black")
+    }
+  }
 }
 
 
@@ -52,7 +130,10 @@ function saveEvent(event) {
 
 // $(".entry").eq(2).css("background-color", "black")
 // $(".th").eq(2).css("background-color", "black")
-
+$(document).ready(function() {
+  timeChange();
+  setInterval(update, 1000)
+})
 
 $(document).ready(function() {
   currentDateTime = $("#currentDay")
@@ -66,12 +147,16 @@ $(save).on("click", function(event) {
 
 // PROOF OF CONCEPT/EXPERIMENTATION AREA
 
-function makeColor() {
-  $(".contentRow").eq(0).css("background-color", "darkred") // selects the entire row, probably a more efficient option, just need to have
-                                                            // log applied
-  $(".contentRow").eq(1).css("background-color", "darkgreen")
-  $(".contentRow").eq(2).css("background-color", "black")
-  }
+// function makeColor() {
+//   $(".contentRow").eq(0).css("background-color", "darkred") // selects the entire row, probably a more efficient option, just need to have
+//                                                             // log applied
+//   $(".contentRow").eq(1).css("background-color", "darkgreen")
+//   $(".contentRow").eq(2).css("background-color", "black")
+//   }
   
   console.log(moment())
-  makeColor()
+  console.log(now)
+  // makeColor()
+
+  // References -- Just handy to have in one place
+  // https://momentjs.com/docs/#/parsing/now/
