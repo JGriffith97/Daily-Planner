@@ -8,8 +8,8 @@ Screenshot: ![Site Screenshot](./Assets/Screenshot/Module-5-img.png/)
 >
 >HTML: [HTML](./index.html)
 >
->CSS: [CSS](./Develop/style.css)
+>CSS: [CSS](./style.css)
 >
->Script: [Script](./Assets/js/script.js)
+>Script: [Script](./script.js)
 
 Live Site: (wait)
