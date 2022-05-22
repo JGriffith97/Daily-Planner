@@ -12,4 +12,4 @@ Screenshot: ![Site Screenshot](./Assets/Screenshot/Module-5-img.png/)
 >
 >Script: [Script](./script.js)
 
-Live Site: (wait)
+Live Site: https://jgriffith97.github.io/Daily-Planner/
