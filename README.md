@@ -2,7 +2,7 @@
 
 ## The goal of this assignment was to build upon starter code to create a functionable daily planner for hour to hour scheduling by utilizing HTML, CSS, JavaScript, jQuery, Moment.js, and Bootstrap.
 
-Screenshot: ![Site Screenshot](./Assets/Module-5-img.png)
+Screenshot: ![Site Screenshot](./Assets/Screenshot/Module-5-img.png/)
 
 >**Open Code Files:**
 >
