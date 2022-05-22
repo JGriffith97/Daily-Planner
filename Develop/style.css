@@ -8,9 +8,13 @@ textarea {
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
-  border-left: 1px solid black;
+  color: white;
+  border: 2px solid silver;
   padding: 10px;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  overflow: auto;
 }
 
 .jumbotron {
@@ -57,15 +61,62 @@ textarea {
   color: white;
 }
 
+/* colorTest {
+  background-color: black;
+} */
+
 .saveBtn {
   border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  height: 100%;
+  width: 100%;
+  margin: 0 0 0 0;
+  padding: 10px 20px 10px 20px;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+#timeHr {
+  padding: .75rem;
+  width: 50px;
+  vertical-align: middle
+}
+
+.th1 {
+  border: solid #454d55 2px;
+}
+
+td {
+  border: solid #454d55 2px;
+}
+
+.container {
+  margin-bottom: 30px;
+}
+
+.buttonHolder {
+  vertical-align: bottom;
+  margin: 0 0 0 0;
+  border-top: solid #454d55 2px;
+  width: 120px
+}
+
+.entry {
+  padding: 0;
+}
+
+.table td, .table th {
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 2px solid #454d55;
+}
+
+#currentDay {
+  margin-top: 45px;
+  font-size: 36px;
+  font-weight: 600;
 }
